@@ -2,73 +2,60 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
 }
-
-
 body{
-    height: 100vh;
-    background: linear-gradient(135deg,#181818,#4e4e4e);
+    height: 100vh;    
+     background: url("./image/mind.jpg")no-repeat center center / cover;
+
 }
-
-
 html{
-    font-size: 15px;
+    font-size: 15px;   
+
 }
 
-
-.wrapper{
+.Display{
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
 }
-
-
 .container{
-    margin-top: 10px;
-    width: 70vmin;
-    height: 70vmin;
+    width: 415px;
+    height:450px;
     display: flex;
     flex-wrap: wrap;
-    gap: 2vmin;
+    gap: 10px;
 }
-
-
-.buttonOption{
-    background: rgba(185, 176, 176, 0.712);
-    height: 22vmin;
-    width: 22vmin;
+.button-option{
+    background: rgba(255, 255, 255, 0.295);
+    height: 130px;
+    width: 130px;
     border: none;
-    border-radius: 6px;
-    font-size: 10vmin;
-    color: #ffffff;
-}
-
-
-#restart{
-    font-size: 20px;
-    padding: 20px;
     border-radius: 5px;
-    background-color: rgba(100, 100, 100, 0.726);
-    color: rgb(0, 0, 0);
+    font-size: 100px;
+    color: rgba(177, 0, 212, 0.589);
+    transition: 0.3s;
+}
+.button-option:hover{
+    background: rgba(255, 255, 255, 0.705);
+}
+#Restart{
+    font-size: 20px;
+    padding: 25px;
+    border-radius: 5px;
+    background-color: rgba(90, 0, 173, 0.589);
+    color: white;
     border: none;
     position: relative;
-    margin: 1.5em auto;
+    margin: 10px auto;
     display: block;
     transition: 0.3s;
 }
-
-
-
-
-#restart:hover{
-    background-color: rgba(211, 209, 209, 0.726);
+#Restart:hover{
+    background-color: rgba(163, 64, 255, 0.589);
 }
-
-
-.popup{
-    background: linear-gradient(135deg,#8b8b8b,#ffffff);
+.Result{
+    background:gray;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -77,41 +64,30 @@ html{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 1em;
-    font-size: 10vmin;
+    gap: 50px;
+    font-size: 70px;
+    background: url('./image/mind.jpg') no-repeat center center/cover;
+
 }
-
-
-
-#newGame{
-    padding: 20px;
-    background-color: rgb(100, 100, 100);
-    font-size: 20px;
-    color: black;
-    border-radius: 3px;
+#NewGame{
+    padding: 20px 30px;
+    background-color: rgba(107, 0, 156, 0.589);
+    font-size: 40px;
+    color: white;
+    border-radius: 10px;
     border: none;
     transition: 0.3s;
 }
-
-
-#newGame:hover{
-    background-color: rgb(201, 201, 201);
+#NewGame:hover{
+    background-color: rgba(195, 67, 255, 0.589);
 }
-
-
 #message{
+    color: rgba(108, 0, 209, 0.589);
     text-align: center;
-    
+    font-size: 65px;
+   
+
 }
-
-
-.popupHide{
-    padding: 10px;
-}
-
-/* borders */
-
-.box-1{
-    border-left: 1px solid white;
-    border-top: 1px solid white;
+.Result.hide{
+    display: none;
 }

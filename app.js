@@ -1,8 +1,8 @@
-let btnRef = document.querySelectorAll(".buttonOption");
-let popupRef = document.querySelector(".popup");
-let newgameBtn = document.getElementById("newGame");
-let restartBtn = document.getElementById("restart");
-let msgRef = document.getElementById("message");
+let Btn = document.querySelectorAll(".button-option");
+let Result = document.querySelector(".Result");
+let NewGame = document.getElementById("NewGame");
+let Restart = document.getElementById("Restart");
+let Message = document.getElementById("message");
 let winningPattern = [
     [0,1,2],
     [0,3,6],
@@ -13,60 +13,53 @@ let winningPattern = [
     [0,4,8],
     [2,4,6],
 ]; 
-// Player 'X'
+
 let xTurn = true;
 let count = 0;
  const disableButtons = () => {
-    btnRef.forEach((element) => (element.disabled = true));
-    popupRef.classList.remove("hide");
+    Btn.forEach((element) => (element.disabled = true));
+    Result.classList.remove("hide");
  };
-//  restart for all
 const enableButtons = () => {
-    btnRef.forEach(element => {
+    Btn.forEach(element => {
         element.innerText = "";
         element.disabled = false;
     });
-    // disable popup
-    popupRef.classList.add("hide");
+    Result.classList.add("hide");
 };
 
 const winFunction = (letter) => {
     disableButtons();
     if(letter == "X"){
-        msgRef.innerHTML = "'X' Wins";
+        Message.innerHTML = "X Wins";
     }
     else{
-        msgRef.innerHTML = "'O' Wins";
+        Message.innerHTML = "O Wins";
     }
 };
 
 const drawFunction = () => {
     disableButtons();
-    msgRef.innerHTML = "Its a Draw";
+    Message.innerHTML = "Draw";
 };
 
-// restart
-newgameBtn.addEventListener("click",() => {
+
+NewGame.addEventListener("click",() => {
     count = 0;
     enableButtons();
 });
 
-restartBtn.addEventListener("click",() => {
+Restart.addEventListener("click",() => {
     count = 0;
     enableButtons();
 });
-
-// when a player win =
-// const winFunction = (letter) => {
-//     disableButtons();
-// }; 
 
 const winChecker = () => {
     for(let i of winningPattern){
         let[element1,element2,element3 ] = [
-            btnRef[i[0]].innerText,
-            btnRef[i[1]].innerText,
-            btnRef[i[2]].innerText,
+            Btn[i[0]].innerText,
+            Btn[i[1]].innerText,
+            Btn[i[2]].innerText,
         ];
         
         if(element1 != "" && element2 != "" & element3 != ""){
@@ -77,7 +70,7 @@ const winChecker = () => {
     }
 };
 
-btnRef.forEach((element) => {
+Btn.forEach((element) => {
     element.addEventListener("click",() => {
         if(xTurn) {
             xTurn = false;
@@ -94,7 +87,6 @@ btnRef.forEach((element) => {
         if(count == 9){
             drawFunction();
         }
-        // check for win
         winChecker();
     });
 });
